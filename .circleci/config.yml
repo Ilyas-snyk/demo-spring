@@ -1,6 +1,6 @@
 version: 2.1
-orbs:
-  snyk: snyk/snyk@1.1.2
+orbs
+  snyk:: snyk/snyk@2.2.0
 jobs:
   snyk-scan:
     docker:
@@ -13,3 +13,4 @@ workflows:
   build-snyk:
     jobs:
       - snyk-scan
+      
