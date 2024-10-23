@@ -1,5 +1,5 @@
 version: 2.1
-orbs
+orbs:
   snyk:: snyk/snyk@2.2.0
 jobs:
   snyk-scan:
@@ -13,4 +13,3 @@ workflows:
   build-snyk:
     jobs:
       - snyk-scan
-      
