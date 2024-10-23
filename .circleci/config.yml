@@ -4,9 +4,15 @@ orbs:
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:11.0
+      - image: cimg/node:lts
     steps:
       - checkout
       - run: npm mvn install
-      - snyk/scan
+      - snyk/install
+      - run:
+          command: snyk version
+          name: Which version of snyk is installed
+      - run:
+          command: snyk code test
+          name: Run code scan
 workflows: null
